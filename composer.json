@@ -1,0 +1,30 @@
+{
+  "name"             : "vi-kon/laravel-diff",
+  "description"      : "",
+  "keywords"         : [
+    "laravel",
+    "diff",
+    "compare"
+  ],
+  "license"          : "MIT",
+  "homepage"         : "https://github.com/vi-kon/laravel-diff",
+  "authors"          : [
+    {
+      "name" : "Kovács Vince",
+      "email": "vincekovacs@hotmail.com"
+    }
+  ],
+  "require"          : {
+    "php"               : ">=5.4.0",
+    "illuminate/support": "~5.0"
+  },
+  "autoload"         : {
+    "psr-0": {
+      "ViKon\\Diff\\": "src/"
+    },
+    "psr-4": {
+      "ViKon\\Diff\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}
