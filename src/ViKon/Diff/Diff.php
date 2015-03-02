@@ -29,14 +29,27 @@ class Diff {
     /**
      * Compare two strings
      *
-     * @param string $old     source text
-     * @param string $new     source text
+     * @param string $old     old source text
+     * @param string $new     new source text
      * @param array  $options comparison options
      *
      * @return \ViKon\Diff\Diff
      */
     public static function compare($old, $new, array $options = []) {
         return new self($old, $new, $options);
+    }
+
+    /**
+     * Compare two files content
+     *
+     * @param string $old     old source containing file path
+     * @param string $new     new source containing file path
+     * @param array  $options comparison options
+     *
+     * @return \ViKon\Diff\Diff
+     */
+    public static function compareFiles($old, $new, array $options = []) {
+        return new self(file_get_contents($old), file_get_contents($new), $options);
     }
 
     /**
@@ -72,12 +85,25 @@ class Diff {
     }
 
     /**
+     * Get hunk groups
+     *
      * @return \ViKon\Diff\DiffGroup[]
      */
     public function getGroups() {
         return $this->groups;
     }
 
+    /**
+     * Render diff to HTML
+     *
+     * * span tag - no changes
+     * * del tag  - deleted entry
+     * * ins tag  - inserted entry
+     *
+     * @param string $separator
+     *
+     * @return string
+     */
     public function toHTML($separator = '<br/>') {
         $output = '';
 

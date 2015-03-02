@@ -27,7 +27,6 @@ class Text implements ArrayAccess, Countable {
         }
     }
 
-
     public function offsetExists($offset) {
         return isset($this->source[$offset]);
     }
@@ -37,7 +36,7 @@ class Text implements ArrayAccess, Countable {
     }
 
     public function offsetSet($offset, $value) {
-        throw new DiffException('Text set not allowed');
+        throw new DiffException('Set not allowed');
     }
 
     public function offsetUnset($offset) {
