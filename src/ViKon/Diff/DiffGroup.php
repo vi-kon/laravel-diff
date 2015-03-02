@@ -33,6 +33,8 @@ class DiffGroup implements ArrayAccess, Countable {
     }
 
     /**
+     * Get hunk group first entry position
+     *
      * @return int
      */
     public function getFirstPosition() {
@@ -40,6 +42,8 @@ class DiffGroup implements ArrayAccess, Countable {
     }
 
     /**
+     * Get hunk group last entry position
+     *
      * @return int
      */
     public function getLastPosition() {
@@ -73,4 +77,5 @@ class DiffGroup implements ArrayAccess, Countable {
      */
     public function count() {
         return count($this->entries);
-    }}
+    }
+}

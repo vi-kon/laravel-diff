@@ -85,12 +85,25 @@ class Diff {
     }
 
     /**
+     * Get hunk groups
+     *
      * @return \ViKon\Diff\DiffGroup[]
      */
     public function getGroups() {
         return $this->groups;
     }
 
+    /**
+     * Render diff to HTML
+     *
+     * * span tag - no changes
+     * * del tag  - deleted entry
+     * * ins tag  - inserted entry
+     *
+     * @param string $separator
+     *
+     * @return string
+     */
     public function toHTML($separator = '<br/>') {
         $output = '';
 
