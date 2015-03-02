@@ -12,6 +12,12 @@ This is **Laravel 5** package for comparison strings and show changes.
 ---
 [Back to top](#diff-tool-for-laravel-5)
 
+## Features
+
+* compare **strings**
+* compare **files**
+* group string differences into **hunk groups**
+
 ## Installation
 
 Via `composer`:
@@ -28,7 +34,18 @@ composer require vi-kon/laravel-diff
 Simple usage:
 
 ```php
+// Compare string line by line
 $diff = Diff::compare("hello\na", "hello\nasd\na");
+// Outputs span, ins, del HTML tags, depend if entry
+// is unmodified, inserted or deleted
+echo $diff->toHTML();
+```
+
+Compare two file:
+
+```php
+// Compare files line by line
+$diff = Diff::compareFiles("a.txt", "b.txt");
 echo $diff->toHTML();
 ```
 
@@ -37,9 +54,9 @@ You can customize output by getting raw data:
 ```php
 
 $options = [
-    // Compare by line or characters
+    // Compare by line or by characters
     'compareCharacters' => false,
-    // Offset size in groups
+    // Offset size in hunk groups
     'offset'            => 2,
 ];
 
@@ -48,8 +65,9 @@ $groups = $diff->getGroups();
 
 foreach($groups as $i => $group)
 {
-    // Output: Hunk 1 : 2 - 6
-    echo 'Hunk ' . $i . ' : Lines ' . $group->getFirstPosition() . ' - ' . $group->getLastPosition(); 
+    // Output: Hunk 1 : Lines 2 - 6
+    echo 'Hunk ' . $i . ' : Lines ' 
+         . $group->getFirstPosition() . ' - ' . $group->getLastPosition(); 
     
     // Output changed lines (entries)
     foreach($group->getEntries() as $entry)
