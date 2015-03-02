@@ -72,7 +72,7 @@ foreach($groups as $i => $group)
     // Output changed lines (entries)
     foreach($group->getEntries() as $entry)
     {
-        // Output old positon of line
+        // Output old position of line
         echo $entry instanceof \ViKon\Diff\Entry\InsertedEntry 
             ? '-'
             : $entry->getOldPosition() + 1;
