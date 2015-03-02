@@ -1,6 +1,6 @@
 {
   "name"             : "vi-kon/laravel-diff",
-  "description"      : "",
+  "description"      : "Diff tool for Laravel 5",
   "keywords"         : [
     "laravel",
     "diff",
