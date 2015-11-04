@@ -20,7 +20,9 @@ class Text implements ArrayAccess, Countable {
     public function __construct($source, array $options = []) {
         $this->options = $options;
 
-        if (isset($this->options['compareCharacters']) && $this->options['compareCharacters']) {
+        if(isset($this->options['compareWords']) && $this->options['compareWords']) {
+            $this->source = preg_split('/[\s]+/', $source);
+        } else if (isset($this->options['compareCharacters']) && $this->options['compareCharacters']) {
             $this->source = str_split($source);
         } else {
             $this->source = preg_split('/(\R)/', $source);
