@@ -15,15 +15,11 @@
     }
   ],
   "require"          : {
-    "php"               : ">=5.4.0",
-    "illuminate/support": "~5.0"
+    "php": ">=5.5.9"
   },
   "autoload"         : {
-    "psr-0": {
-      "ViKon\\Diff\\": "src/"
-    },
     "psr-4": {
-      "ViKon\\Diff\\": "src/"
+      "ViKon\\Diff\\": "src/ViKon/Diff"
     }
   },
   "minimum-stability": "stable"

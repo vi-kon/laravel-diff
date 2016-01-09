@@ -1,6 +1,6 @@
-# Diff tool for Laravel 5
+# Diff tool
 
-This is **Laravel 5** package for comparison strings and show changes.
+This package is for comparison strings and show changes.
 
 ## Table of content
 
@@ -10,7 +10,7 @@ This is **Laravel 5** package for comparison strings and show changes.
 * [Usage](#usage)
 
 ---
-[Back to top](#diff-tool-for-laravel-5)
+[Back to top](#diff-tool)
 
 ## Features
 
@@ -27,7 +27,7 @@ composer require vi-kon/laravel-diff
 ```
 
 ---
-[Back to top](#diff-tool-for-laravel-5)
+[Back to top](#diff-tool)
 
 ## Usage
 
@@ -94,11 +94,11 @@ foreach($groups as $i => $group)
 ```
 
 ---
-[Back to top](#diff-tool-for-laravel-5)
+[Back to top](#diff-tool)
 
 ## License
 
 This package is licensed under the MIT License
 
 ---
-[Back to top](#diff-tool-for-laravel-5)
+[Back to top](#diff-tool)
